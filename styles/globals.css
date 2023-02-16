@@ -1,0 +1,116 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+  }
+}
+
+.container {
+  height: 100vh;
+  background-color: gray;
+}
+
+.container__user {
+  display: flex;
+  align-items: center;
+}
+
+.container__user-img {
+  height: 3rem;
+  border-radius: 1rem;
+}
+
+.activity_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
+.activity_item-green {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid green;
+}
+
+.activity_item-blue {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid lightblue;
+}
+
+.activity_field {
+  /* background-color: #1f1f1f; */
+  color: #fff;
+  margin: 5px;
+  cursor: pointer;
+  width: 75%;
+}
+
+.activity_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.activity_name {
+}
+
+.activity_movingtime {
+}
+
+.activity_distance {
+}
+
+.activity_speed {
+}
+
+.activity_elapsedtime {
+}
+
+.container__data {
+  display: flex;
+}
+
+.rankings__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rankings__name {
+}
+.rankings__distance {
+}
+.rankings__photo {
+}
+
+.rankings__lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
