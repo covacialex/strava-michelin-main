@@ -93,6 +93,24 @@ export const StateContext = ({ children }) => {
     }
   };
 
+  const readActivitiesForUser = async (userId) => {
+    try {
+      const docRef = doc(db, "activities", userId);
+      const docSnap = await getDoc(docRef);
+      const docData = docSnap.data();
+
+      if (docSnap.exists()) {
+        setSavedActivityList(docData.activities);
+        console.log(savedActivityList);
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const readRankings = async (userId) => {
     // setAllActivities([]);
     const querySnapshot = await getDocs(collection(db, "activities", userId));
@@ -239,6 +257,7 @@ export const StateContext = ({ children }) => {
   return (
     <Context.Provider
       value={{
+        session,
         activityList,
         totalDistance,
         allActivities,
@@ -257,6 +276,7 @@ export const StateContext = ({ children }) => {
         readRankings,
         readAllUsers,
         calculateDistanceTraveledForAllUsers,
+        readActivitiesForUser,
       }}
     >
       {children}

@@ -1,10 +1,12 @@
 import { useStateContext } from "../context/StateContext";
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Rankings() {
   // if (Object.keys(session) === 0) console.log("no session");
 
   const {
+    session,
     readRankings,
     allActivities,
     totalDistance,
@@ -42,7 +44,7 @@ export default function Rankings() {
     (a, b) => b.totalDaysMonth - a.totalDaysMonth
   );
 
-  console.log("daysRankings", daysRankings);
+  console.log("daysRankings", session);
 
   return (
     <div>
@@ -60,6 +62,7 @@ export default function Rankings() {
                 <p className="rankings__distance">
                   {mToKms(user.traveledDistanceMonth)}
                 </p>
+                <Link href={`user/${session.data.user.id}`}>User Page</Link>
               </div>
             );
           })}
